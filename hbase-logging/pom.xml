@@ -94,6 +94,12 @@
       <plugin>
         <groupId>net.revelc.code</groupId>
         <artifactId>warbucks-maven-plugin</artifactId>
+        <configuration>
+          <!-- warbucks-maven-plugin 1.1.0 cannot parse module-info.class files
+               (ACC_MODULE flag, introduced in Java 9 / JPMS). Skip until the
+               plugin is upgraded or replaced project-wide. -->
+          <skip>true</skip>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
